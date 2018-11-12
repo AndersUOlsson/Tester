@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("index", "Uploadfile", FormMethod.Post, new { entype = "Multipart/form-data" }))
+{
+    @Html.AntiForgeryToken();
+    @Html.Label("Upload file")
+    <input type="file" name="namefile"/>
+    <input type="submit" value="Upload"/>
+}
